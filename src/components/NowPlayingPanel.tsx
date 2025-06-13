@@ -1,12 +1,14 @@
-"use client"; // Diperlukan karena ada Button, Slider, AudioSliderDemo, SliderWithStickyLabelDemo
+// src/components/panels/NowPlayingPanel.tsx
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 import { Plus, Heart, Shuffle, SkipBack, Play, SkipForward, Repeat2, Volume2, VolumeX, Headphones } from "lucide-react";
-import AudioSliderDemo from "@/components/slider-08"; // Pastikan path benar
-import SliderWithStickyLabelDemo from "@/components/slider-10"; // Pastikan path benar
-import * as React from "react"; // Tambahkan import React
+import AudioSliderDemo from "@/components/slider-08";
+import SliderWithStickyLabelDemo from "@/components/slider-10";
+import * as React from "react";
+import Image from "next/image";
 
 export default function NowPlayingPanel() {
     return (
@@ -15,10 +17,12 @@ export default function NowPlayingPanel() {
             <section className="mb-8 pt-6">
                 <h2 className="text-2xl font-bold mb-4 text-center">Now playing</h2>
                 <div className="flex flex-col items-center space-y-4 mx-auto max-w-md">
-                    <img
+                    <Image
+                        width={600} // Ganti dengan lebar gambar asli atau lebar yang Anda inginkan
+                        height={400}
                         src="/placeholders/money-machine.jpg"
                         alt="Current Album Cover"
-                        className="w-full rounded-md object-cover shadow-lg aspect-square"
+                        className="rounded-md object-cover shadow-lg aspect-square mt-10"
                     />
                     <div className="w-full flex justify-between items-center px-2 -mt-2 max-w-sm">
                         <Button variant="ghost" size="icon" className="h-8 w-8 text-green-500 hover:bg-transparent">
@@ -46,7 +50,12 @@ export default function NowPlayingPanel() {
                             <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full text-muted-foreground hover:bg-muted">
                                 <SkipBack className="h-5 w-5" />
                             </Button>
-                            <Button variant="primary" size="icon" className="h-14 w-14 rounded-full bg-green-500 text-white hover:bg-green-600 shadow-lg">
+                            {/* PERBAIKAN DI SINI */}
+                            <Button
+                                variant="default" // Mengubah variant dari "primary" ke "default"
+                                size="icon"
+                                className="h-14 w-14 rounded-full bg-green-500 text-white hover:bg-green-600 shadow-lg" // Menjaga styling Tailwind untuk warna
+                            >
                                 <Play className="h-7 w-7" />
                             </Button>
                             <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full text-muted-foreground hover:bg-muted">
@@ -73,7 +82,6 @@ export default function NowPlayingPanel() {
                 </div>
             </section>
 
-            {/* Area untuk daftar artis terkait yang bisa di-scroll */}
             <ScrollArea className="flex-1 p-6 pt-0">
                 <h3 className="text-xl font-bold mb-4">Related Artists</h3>
                 <div className="space-y-4">
@@ -88,7 +96,10 @@ export default function NowPlayingPanel() {
                         { id: 8, name: "Purity Ring", genre: "Dream Pop", imageUrl: "/placeholders/artist-purity-ring.jpg" },
                     ].map((artist) => (
                         <div key={artist.id} className="flex items-center space-x-3 p-2 rounded-md hover:bg-muted cursor-pointer">
-                            <img src={artist.imageUrl} alt={artist.name} className="h-12 w-12 rounded-full object-cover" />
+                            <Image
+                                width={80} // Ganti dengan lebar gambar asli atau lebar yang Anda inginkan
+                                height={120}
+                                src={artist.imageUrl} alt={artist.name} className="rounded-full w-12 h-12 object-cover" />
                             <div>
                                 <p className="font-semibold text-base truncate">{artist.name}</p>
                                 <p className="text-sm text-muted-foreground truncate">{artist.genre}</p>

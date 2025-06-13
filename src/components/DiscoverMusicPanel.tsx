@@ -7,6 +7,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
 import * as React from "react"; // Tambahkan import React
+import Image from "next/image";
 
 export default function DiscoverMusicPanel() {
     return (
@@ -38,7 +39,10 @@ export default function DiscoverMusicPanel() {
                     ].map((album) => (
                         <Card key={album.id} className="w-full h-auto bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow">
                             <CardContent className="p-3">
-                                <img src={album.imageUrl} alt={album.title} className="w-full h-auto rounded-md mb-2 object-cover aspect-square" />
+                                <Image
+                                    width={220}
+                                    height={100}
+                                    src={album.imageUrl} alt={album.title} className="w-full h-auto rounded-md mb-2 object-cover aspect-square" />
                                 <p className="text-sm font-semibold truncate">{album.title}</p>
                                 <p className="text-xs text-muted-foreground truncate">{album.artist}, {album.year}</p>
                             </CardContent>
@@ -59,10 +63,17 @@ export default function DiscoverMusicPanel() {
                     ].map((song) => (
                         <div key={song.id} className="flex items-center justify-between p-2 rounded-md hover:bg-muted cursor-pointer">
                             <div className="flex items-center space-x-4">
-                                <img src={song.imageUrl} alt={song.title} className="h-12 w-12 rounded-md object-cover" />
+                                <Image
+                                    width={50}
+                                    height={60}
+                                    src={song.imageUrl} alt={song.title} className="rounded-full w-12 h-12 object-cover" />
                                 <div>
-                                    <p className="font-semibold text-base truncate">{song.title}</p>
-                                    <p className="text-sm text-muted-foreground truncate">{song.artist}, {song.year}</p>
+                                    <ScrollArea className=" w-[240px] p-4">
+                                        <p className="font-semibold text-base truncate">{song.title}</p>
+                                        <p className="text-sm text-muted-foreground truncate">{song.artist}</p>
+                                        <p className="text-sm text-muted-foreground truncate">{song.year}</p>
+
+                                    </ScrollArea>
                                 </div>
                             </div>
                             <span className="text-sm text-muted-foreground">{song.duration}</span>

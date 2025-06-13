@@ -6,6 +6,7 @@ import {
     Shuffle, SkipBack, Play, Pause, SkipForward, Repeat2,
     Home, LayoutGrid, Search, User
 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react"; // Untuk state play/pause
 
 // Definisikan tipe props untuk komponen
@@ -27,7 +28,7 @@ export default function BottomNavigationBar({ currentSong }: BottomNavigationBar
                 {/* Gambar dan Judul Lagu */}
                 <div className="flex items-center space-x-3 w-48 mr-auto"> {/* Lebar tetap untuk info lagu, mr-auto untuk push controls */}
                     {currentSong ? (
-                        <img
+                        <Image
                             src={currentSong.imageUrl}
                             alt={currentSong.title}
                             className="h-10 w-10 rounded-md object-cover flex-shrink-0"

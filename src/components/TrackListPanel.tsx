@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import { ListMusic } from "lucide-react";
 import * as React from "react"; // Tambahkan import React
+import Image from "next/image";
 
 export default function TrackListPanel() {
     return (
@@ -31,12 +32,15 @@ export default function TrackListPanel() {
                         { id: 12, title: "Tony Tone", artist: "A$AP Rocky", duration: "4:35", imageUrl: "/placeholders/track-tony-tone.jpg" },
                     ].map((track) => (
                         <div key={track.id} className="flex items-center space-x-3 p-2 rounded-md hover:bg-muted cursor-pointer">
-                            <img src={track.imageUrl} alt={track.title} className="h-10 w-10 rounded-md object-cover" />
-                            <div className="flex-1">
+                            <Image
+                                height={160}
+                                width={100}
+                                src={track.imageUrl} alt={track.title} className=" rounded-md object-cover" />
+                            <div className="flex-1 ">
                                 <p className="font-semibold text-sm truncate">{track.title}</p>
                                 <p className="text-xs text-muted-foreground truncate">{track.artist}</p>
                             </div>
-                            <span className="text-xs text-muted-foreground">{track.duration}</span>
+                            <span className="text-xs text-muted-foreground ml-62">{track.duration}</span>
                         </div>
                     ))}
                 </div>

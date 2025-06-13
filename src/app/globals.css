@@ -1,3 +1,5 @@
+/* src/app/globals.css */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -112,11 +114,29 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Custom CSS to hide scrollbar for Webkit browsers */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* For Firefox (not needed for this specific effect, but good practice) */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    /* Tambahkan properti ini untuk mencegah seleksi teks */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Old versions of Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
   }
 }

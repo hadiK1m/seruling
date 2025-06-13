@@ -25,7 +25,7 @@ export default function Header() {
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         <Input
                             type="text"
-                            placeholder="Search or enter website name"
+                            placeholder="Search or enter music name"
                             className="pl-9 pr-3 py-2 text-sm"
                         />
                     </div>

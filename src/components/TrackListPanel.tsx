@@ -33,9 +33,8 @@ export default function TrackListPanel() {
                     ].map((track) => (
                         <div key={track.id} className="flex items-center space-x-3 p-2 rounded-md hover:bg-muted cursor-pointer">
                             <Image
-                                height={160}
-                                width={100}
-                                src={track.imageUrl} alt={track.title} className=" rounded-md object-cover" />
+                                width={80} height={80}
+                                src={track.imageUrl} alt={track.title} className="rounded-md object-cover" />
                             <div className="flex-1 ">
                                 <p className="font-semibold text-sm truncate">{track.title}</p>
                                 <p className="text-xs text-muted-foreground truncate">{track.artist}</p>

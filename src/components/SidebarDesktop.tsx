@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Compass, Headphones, Heart, Settings } from "lucide-react";
+import { Compass, Headphones, Heart, MessageSquare, Settings } from "lucide-react";
 import * as React from "react"; // Tambahkan import React
 
 export default function SidebarDesktop() {
@@ -21,6 +21,10 @@ export default function SidebarDesktop() {
                 <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full text-muted-foreground hover:bg-muted/50 hover:text-foreground">
                     <Heart className="h-5 w-5" />
                     <span className="sr-only">Liked Songs</span>
+                </Button>
+                <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full text-muted-foreground hover:bg-muted/50 hover:text-foreground">
+                    <MessageSquare className="h-5 w-5" />
+                    <span className="sr-only">Chat</span>
                 </Button>
                 <Separator className="my-4 w-1/2" />
                 <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full text-muted-foreground hover:bg-muted/50 hover:text-foreground">

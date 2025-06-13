@@ -18,8 +18,7 @@ export default function NowPlayingPanel() {
                 <h2 className="text-2xl font-bold mb-4 text-center">Now playing</h2>
                 <div className="flex flex-col items-center space-y-4 mx-auto max-w-md">
                     <Image
-                        width={600} // Ganti dengan lebar gambar asli atau lebar yang Anda inginkan
-                        height={400}
+                        width={384} height={384}
                         src="/placeholders/money-machine.jpg"
                         alt="Current Album Cover"
                         className="rounded-md object-cover shadow-lg aspect-square mt-10"
@@ -97,8 +96,7 @@ export default function NowPlayingPanel() {
                     ].map((artist) => (
                         <div key={artist.id} className="flex items-center space-x-3 p-2 rounded-md hover:bg-muted cursor-pointer">
                             <Image
-                                width={80} // Ganti dengan lebar gambar asli atau lebar yang Anda inginkan
-                                height={120}
+                                width={48} height={48}
                                 src={artist.imageUrl} alt={artist.name} className="rounded-full w-12 h-12 object-cover" />
                             <div>
                                 <p className="font-semibold text-base truncate">{artist.name}</p>

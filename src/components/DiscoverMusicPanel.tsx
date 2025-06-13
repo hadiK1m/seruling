@@ -40,8 +40,7 @@ export default function DiscoverMusicPanel() {
                         <Card key={album.id} className="w-full h-auto bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow">
                             <CardContent className="p-3">
                                 <Image
-                                    width={220}
-                                    height={100}
+                                    width={192} height={192}
                                     src={album.imageUrl} alt={album.title} className="w-full h-auto rounded-md mb-2 object-cover aspect-square" />
                                 <p className="text-sm font-semibold truncate">{album.title}</p>
                                 <p className="text-xs text-muted-foreground truncate">{album.artist}, {album.year}</p>
@@ -64,8 +63,7 @@ export default function DiscoverMusicPanel() {
                         <div key={song.id} className="flex items-center justify-between p-2 rounded-md hover:bg-muted cursor-pointer">
                             <div className="flex items-center space-x-4">
                                 <Image
-                                    width={50}
-                                    height={60}
+                                    width={48} height={48}
                                     src={song.imageUrl} alt={song.title} className="rounded-full w-12 h-12 object-cover" />
                                 <div>
                                     <ScrollArea className=" w-[240px] p-4">
